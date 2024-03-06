@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book by ISBN</title>
+</head>
+<body>
+    <table id="allBooks" border =1px solid black>
+            <thead>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Publisher</th>
+                <th>Rating</th>
+                <th</th>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr {{#unless this.avg_reviews}} style="background:yellow;" {{/unless}}>
+                    <td>{{this.ISBN_13}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{this.author}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.publisher}}</td>
+                    <td>{{replace this.avg_reviews}}</td>
+                    <td>{{this.complete_link}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+</body>
+</html>
